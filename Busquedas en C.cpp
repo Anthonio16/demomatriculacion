@@ -5,7 +5,7 @@
 char placas[5][10] = {"ZXC123", "ABC456", "LMN789", "DEF234", "GHI567"};
 int n = 5;
 
-// BÚSQUEDA SECUENCIAL
+// BÃšSQUEDA SECUENCIAL
 int busquedaSecuencial(char placa[]) {
 	for (int i = 0; i < n; i++) {
 		if (strcmp(placas[i], placa) == 0)
@@ -14,7 +14,7 @@ int busquedaSecuencial(char placa[]) {
 	return -1; // No encontrada
 }
 
-// BÚSQUEDA BINARIA (requiere lista ordenada alfabéticamente)
+// BÃšSQUEDA BINARIA (requiere lista ordenada alfabÃ©ticamente)
 int busquedaBinaria(char placa[]) {
 	int izquierda = 0, derecha = n - 1;
 	
@@ -44,29 +44,29 @@ void ordenarPlacas() {
 				strcpy(placas[j+1], temp);
 	}
 }
-
+// Main para funciÃ³n del cÃ³digo 
 int main() {
 	char buscada[10];
 	
 	printf("Ingrese la placa a buscar: ");
 	scanf("%s", buscada);
 	
-	// ?? Búsqueda secuencial
+	// ?? BÃºsqueda secuencial
 	int posSec = busquedaSecuencial(buscada);
 	if (posSec != -1)
-		printf("Placa encontrada con búsqueda secuencial en posición %d\n", posSec);
+		printf("Placa encontrada con bÃºsqueda secuencial en posiciÃ³n %d\n", posSec);
 	else
-		printf("Placa no encontrada con búsqueda secuencial\n");
+		printf("Placa no encontrada con bÃºsqueda secuencial\n");
 	
-	// ?? Ordenar para búsqueda binaria
+	// ?? Ordenar para bÃºsqueda binaria
 	ordenarPlacas();
 	
-	// ?? Búsqueda binaria
+	// ?? BÃºsqueda binaria
 	int posBin = busquedaBinaria(buscada);
 	if (posBin != -1)
-		printf("Placa encontrada con búsqueda binaria en posición %d (lista ordenada)\n", posBin);
+		printf("Placa encontrada con bÃºsqueda binaria en posiciÃ³n %d (lista ordenada)\n", posBin);
 	else
-		printf("Placa no encontrada con búsqueda binaria\n");
+		printf("Placa no encontrada con bÃºsqueda binaria\n");
 	
 	return 0;
 }
